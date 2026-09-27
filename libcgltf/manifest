@@ -1,14 +1,15 @@
 : 1
 name: libcgltf
-version: 0.1.0-a.0.z
+version: 1.15.0-a.0.z
 language: c
 project: cgltf
-summary: :diamond_shape_with_a_dot_inside: cgltf
-license: other: proprietary ; Not free/open source.
+summary: glTF 2.0 loader and writer C library
+topics: glTF, 3D, graphics, parser
+license: MIT
 description-file: README.md
 package-description-file: PACKAGE-README.md
-url: https://example.org/upstream
-email: upstream@example.org
+url: https://github.com/jkuhlmann/cgltf
+src-url: https://github.com/jkuhlmann/cgltf
 package-url: https://github.com/build2-packaging/cgltf
 package-email: packaging@build2.org ; Mailing list.
 depends: * build2 >= 0.18.0
