@@ -32,6 +32,12 @@ c.poptions =+ "-I$out_pfx_src" "-I$src_pfx_src" \
 if ($c.target.system == 'mingw32')
   c.loptions += -Wl,--export-all-symbols
 
+# Upstream uses fopen() and strncpy(), which MSVC deprecates (upstream's test
+# build defines the same).
+#
+if ($c.target.system == 'win32-msvc')
+  c.poptions += -D_CRT_SECURE_NO_WARNINGS
+
 # Export options.
 #
 lib{cgltf}:
