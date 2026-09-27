@@ -1,14 +1,6 @@
-#include <cgltf.h>
-
-#include <errno.h>
-
-int say_hello (FILE *f, const char* n)
-{
-  if (f == NULL || n == NULL || *n == '\0')
-  {
-    errno = EINVAL;
-    return -1;
-  }
-
-  return fprintf (f, "Hello, %s!\n", n);
-}
+/* Compiled mode: the implementations of both cgltf.h and cgltf_write.h
+ * (cgltf_write.h includes cgltf.h).
+ */
+#define CGLTF_IMPLEMENTATION
+#define CGLTF_WRITE_IMPLEMENTATION
+#include <cgltf_write.h>
