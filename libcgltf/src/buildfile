@@ -38,6 +38,13 @@ if ($c.target.system == 'mingw32')
 if ($c.target.system == 'win32-msvc')
   c.poptions += -D_CRT_SECURE_NO_WARNINGS
 
+# CGLTF_SPRINTF intentionally calls snprintf(NULL, 0, ...) to size the
+# buffer. GCC -O3 reports that as -Wformat-truncation ("null destination
+# pointer").
+#
+if ($c.id == 'gcc')
+  c.coptions += -Wno-format-truncation
+
 # Export options.
 #
 lib{cgltf}:
