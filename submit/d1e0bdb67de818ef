@@ -1,0 +1,7 @@
+: 1
+name: libcgltf
+version: 1.15.0
+language: c
+project: cgltf
+summary: glTF 2.0 loader and writer C library
+license: MIT
